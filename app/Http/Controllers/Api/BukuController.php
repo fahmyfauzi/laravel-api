@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Buku;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 
 class BukuController extends Controller
 {
@@ -27,7 +27,34 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataBuku = new Buku();
+
+        // validsi
+        $rules = [
+            'judul' => 'required',
+            'pengarang' => 'required',
+            'tanggal_publikasi' => 'required|date',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        // jika validasi gagal
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Gagal menambahkan buku',
+                'data' => $validator->errors()
+            ]);
+        }
+
+
+        $dataBuku->judul = $request->judul;
+        $dataBuku->pengarang = $request->pengarang;
+        $dataBuku->tanggal_publikasi = $request->tanggal_publikasi;
+
+        $dataBuku->save();
+        return response()->json([
+            'status' => true,
+            'message' => 'Berhasil menambahkan data'
+        ]);
     }
 
     /**
