@@ -75,7 +75,7 @@ class BukuController extends Controller
             $error = $contentArray['data'];
             return redirect()->to('buku')->withErrors($error)->withInput();
         } else {
-            return redirect()->to('buku')->with('succes', 'Berhasil ditambahkan');
+            return redirect()->to('buku')->with('success', 'Berhasil ditambahkan');
         }
     }
 
@@ -149,7 +149,7 @@ class BukuController extends Controller
             $error = $contentArray['data'];
             return redirect()->to('buku')->withErrors($error)->withInput();
         } else {
-            return redirect()->to('buku')->with('succes', 'Berhasil diupdate');
+            return redirect()->to('buku')->with('success', 'Berhasil diupdate');
         }
     }
 
@@ -158,6 +158,23 @@ class BukuController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $client = new Client();
+
+        // url dari backend api
+        $url = "http://127.0.0.1:8000/api/buku/{$id}";
+
+        $response = $client->request('delete', $url);
+        $content = $response->getBody()->getContents();
+
+        // convert json to array
+        $contentArray = json_decode($content, true);
+
+        // cek validasi
+        if ($contentArray['status'] != true) {
+            $error = $contentArray['data'];
+            return redirect()->to('buku')->withErrors($error)->withInput();
+        } else {
+            return redirect()->to('buku')->with('successs', 'Berhasil dihapus');
+        }
     }
 }

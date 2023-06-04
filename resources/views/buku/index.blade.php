@@ -23,9 +23,9 @@
                     </ul>
                 </div>
             @endif
-            @if (session()->has('succes'))
+            @if (session()->has('success'))
                 <div class="alert alert-success">
-                    {{ session('succes') }}
+                    {{ session('success') }}
                 </div>
             @endif
             <form action='' method='post'>
@@ -96,7 +96,14 @@
                                 <td>
                                     <a href="{{ route('buku.edit', $item['id']) }}"
                                         class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Del</a>
+                                    <form action="{{ route('buku.delete', $item['id']) }}" method="post"
+                                        onsubmit="return confirm('apakah yakin akan melakukan penghapusan data')"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('delete')
+
+                                        <button type="submit" name="submit" class="btn btn-danger btn-sm">Del</button>
+                                    </form>
                                 </td>
                             </tr>
                             @php
