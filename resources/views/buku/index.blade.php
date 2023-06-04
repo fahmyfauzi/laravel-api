@@ -14,23 +14,41 @@
     <main class="container">
         <!-- START FORM -->
         <div class="bg-body my-3 rounded p-3 shadow-sm">
-            <form action='' method='post'>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if (session()->has('succes'))
+                <div class="alert alert-success">
+                    {{ session('succes') }}
+                </div>
+            @endif
+            <form action='{{ route('buku.store') }}' method='post'>
+                @csrf
                 <div class="row mb-3">
                     <label for="judul" class="col-sm-2 col-form-label">Judul Buku</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name='judul' id="judul">
+                        <input type="text" class="form-control" name='judul' id="judul"
+                            value="{{ old('judul') }}">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Pengarang</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name='pengarang' id="pengarang">
+                        <input type="text" class="form-control" name='pengarang' id="pengarang"
+                            value="{{ old('pengarang') }}">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="tanggal_publikasi" class="col-sm-2 col-form-label">Tanggal Publikasi</label>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control w-50" name='tanggal_publikasi' id="tanggal_publikasi">
+                        <input type="date" class="form-control w-50" name='tanggal_publikasi' id="tanggal_publikasi"
+                            value="{{ old('tanggal_publikasi') }}">
                     </div>
                 </div>
                 <div class="row mb-3">
