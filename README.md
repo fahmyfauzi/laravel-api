@@ -1,66 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel API (Aplicatioin Programming Interface)
+Hasil Belajar membuat API dari youtube [@rumahrafif](https://www.youtube.com/watch?v=tv7tqf3AC7Y)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## features
+- API CRUD
+- Interface CRUD
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## requirements
+- php 8.1
+- database mysql
+- laravel 10.0
+- laragon
+- chrome
+- composer
+- Postman
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Clone repositori
+    ```sh
+    git https://github.com/fahmyfauzi/laravel-api.git
+    ```
+2. masuk ke dalam directori
+    ```sh
+    cd laravel-api
+    ```
+3. Instal composer
+    ```sh
+    composer install
+    or
+    composer update
+    ```
+4. Copy file .env.example 
+    ```
+    cp .env.example .env
+    ```
+4. Generate an app encryption key
 
-## Learning Laravel
+    ```sh
+    php artisan key:generate
+    ```
+5. Create database on your computer or phpMyAdmin and import data from 
+6. In the .env file, add database information to allow Laravel to connect to the database
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel_didamelid
+    DB_USERNAME=DB_USERNAME
+    DB_PASSWORD=DB_PASSWORD
+    ```
+    
+6. migrasi database
+    ```
+    php artisan migrate
+    ```
+    
+7. run project 2 terminal
+    ```sh
+   php artisan serve
+   and
+   php artisan serve --port=9000
+    ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## usage
+- buka chrome  dan akses ``` http://127.0.0.1:9000/buku``` untuk melihat daftar buku serta melakukan CRUD
+- akses dari software postman ```http://127.0.0.1:8000/api/buku```  lalu pilih metode GET, untuk melihat api daftar buku
+- akses dari software postman ```http://127.0.0.1:8000/api/buku/{id}``` misal ``` http://127.0.0.1:8000/api/buku/26 ``` lalu pilih metode GET, untuk melihat api detail buku
+- akses dari software postman ```http://127.0.0.1:8000/api/buku/{id}``` misal ``` http://127.0.0.1:8000/api/buku/26 ``` lalu pilih metode PUT masuk ke Body lalu pilih x-wwww-form-urlencoded dan masukan key value yang mau diubah datanya
+- akses dari software postman ```http://127.0.0.1:8000/api/buku/{id}``` misal ``` http://127.0.0.1:8000/api/buku/26 ``` lalu pilih metode DELETE, untuk menghapus data.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## credits
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+[Fahmy Fauzi ](https://github.com/fahmyfauzi)
 
-### Premium Partners
+## screanshot
+1. Menambahkan buku dan melihat semua buku
+   ![Untitled video - Made with Clipchamp (11)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/95c03025-8bee-40bc-b8da-a6ea96d428c8)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. Menampilkan detail buku by id
+   ![Untitled video - Made with Clipchamp (12)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/e16761dd-9c8f-4e81-b168-475021046d21)
 
-## Contributing
+3. Mengubah judul buku
+   ![Untitled video - Made with Clipchamp (13)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/7c844145-15d5-4deb-82ac-ee460c4455c9)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Menghapus buku
+   ![Untitled video - Made with Clipchamp (14)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/a78d5a5a-0279-4c5e-8ed9-2db3d6d75753)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
