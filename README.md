@@ -78,14 +78,18 @@ Hasil Belajar membuat API dari youtube [@rumahrafif](https://www.youtube.com/wat
 
 ## screanshot
 1. Menambahkan buku dan melihat semua buku
-   ![Untitled video - Made with Clipchamp (11)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/95c03025-8bee-40bc-b8da-a6ea96d428c8)
+    ![Untitled video - Made with Clipchamp (11)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/95f3a021-b606-4353-9bef-f4542f4518b9)
+
 
 2. Menampilkan detail buku by id
-   ![Untitled video - Made with Clipchamp (12)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/e16761dd-9c8f-4e81-b168-475021046d21)
+    ![Untitled video - Made with Clipchamp (12)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/679dc582-9aa8-49dd-a577-37c5e8a1db1a)
+
 
 3. Mengubah judul buku
-   ![Untitled video - Made with Clipchamp (13)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/7c844145-15d5-4deb-82ac-ee460c4455c9)
+   ![Untitled video - Made with Clipchamp (13)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/dcd277a6-0d56-41e6-8043-d4aac9dc36ae)
+
 
 5. Menghapus buku
-   ![Untitled video - Made with Clipchamp (14)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/a78d5a5a-0279-4c5e-8ed9-2db3d6d75753)
+   ![Untitled video - Made with Clipchamp (14)](https://github.com/fahmyfauzi/laravel-api/assets/58255031/51e6c473-563a-46ae-bc2c-32b66162fe9c)
+
 
